@@ -13,12 +13,8 @@ const db = knex({
   // Enter your own database information here based on what you created
   client: "pg",
   connection: {
-    host: "postgresql-fluffy-62116",
-    user: "postgres",
-    port: 5432,
-    password: "postgres",
-    database: "smart-brain",
-  },
+    host: process.env.DATABASE_URL,
+    ssl:true,
 });
 
 const app = express();
